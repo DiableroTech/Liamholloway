@@ -224,9 +224,16 @@ Candidates you already have in the world: Cryptic, Fern, Folio, Mend, others. Cu
 ## 10. About / person
 
 Short bio in your voice (4–8 sentences, or bullets you will turn into copy):
+what where when why how
+
+This a short bio about me that I will continue to edit. Hello I am Liam! I am a fullstack engineer, I have experience in mobile apps as well as web apps. React and react native apps are my bread and butter! I've mainly built apps for the crypto industry, so building our Dapps and integrating smart contracts in them is what im used to. I started developing about 6 years ago. Since then my focus has pivoted from crypto to AI projects. I believe society has a lot to benefit from AI
 
 
 Facts that should appear somewhere (location, years, companies, education, whatever you actually want public):
+co founded 2 companies
+written 3 production apps
+Vancouver, BC
+
 
 
 Personality you want on the page vs keep off the page:
