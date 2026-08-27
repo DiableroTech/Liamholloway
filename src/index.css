@@ -1,4 +1,24 @@
 @import "tailwindcss";
+@import "@fontsource-variable/syne";
+@import "@fontsource/ibm-plex-sans/latin-400.css";
+@import "@fontsource/ibm-plex-sans/latin-500.css";
+
+@theme {
+  --font-display: "Syne Variable", sans-serif;
+  --font-sans: "IBM Plex Sans", sans-serif;
+
+  --color-ink: #0b1218;
+  --color-ink-2: #121b24;
+  --color-paper: #d7e0ea;
+  --color-mute: #8a99a8;
+  --color-line: #243140;
+  --color-accent: #3b94e6;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
 
 html,
 body,
@@ -8,4 +28,32 @@ body,
 
 body {
   margin: 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-copy {
+    animation: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-copy {
+  animation: rise 0.7s ease-out both;
 }

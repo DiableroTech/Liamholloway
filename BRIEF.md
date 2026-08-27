@@ -179,21 +179,21 @@ everything above gets shipped in V1!
 
 List 4–8 pieces. Flagship first. Role + outcome beat a feature list.
 
-### Project 1 — name:
+### Project 1 — name: Cryptic
 
-- One-line what it is:
-- Your role:
-- Outcome / why it matters:
-- Visuals you have (screenshot, logo, video):
+- One-line what it is: Cryptic is a quantum encrypted meessaging app with VOIP calling and Crypto trading. 
+- Your role: Co-founder, Frontend engineer, mobile application developer
+- Outcome / why it matters: because its great
+- Visuals you have (screenshot, logo, video): we will get visuals
 - Live URL / case study later?:
 - Ship in v1?: yes / no
 
-### Project 2 — name:
+### Project 2 — name: LINQ
 
-- One-line what it is:
-- Your role:
-- Outcome / why it matters:
-- Visuals you have:
+- One-line what it is: LP distribution platform on ethereum blockchain. also we had an LP staking platform
+- Your role: My role was to create the dapp, using react and typesript, and to integrate ERC-20 contracts into the Dapp. And to create the functionality and ui/ux for the staking platform. 
+- Outcome / why it matters: because it helped share the liquidity. and because it was awesome. 
+- Visuals you have: we will get some. 
 - Live URL:
 - Ship in v1?:
 
@@ -233,6 +233,10 @@ Facts that should appear somewhere (location, years, companies, education, whate
 co founded 2 companies
 written 3 production apps
 Vancouver, BC
+
+@Diableros666
+
+liamholloway2@gmail.com
 
 
 
@@ -298,8 +302,10 @@ Dump files into `content/` when you have them.
 
 ---
 
-## 15. Design read (leave blank)
+## 15. Design read
 
-Filled after this brief is complete, before any UI is built.
+Reading this as: developer / founder portfolio for employers, with a dark, sleek, sharp language, leaning toward custom Tailwind + self-hosted type (not a kit).
 
-> Reading this as: ___ for ___, with a ___ language, leaning toward ___.
+Dials for v1: DESIGN_VARIANCE 7, MOTION_INTENSITY 6, VISUAL_DENSITY 4.
+
+Locked: dark page theme, one blue accent, all-sharp corners, Syne + IBM Plex Sans.
