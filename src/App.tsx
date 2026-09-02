@@ -1,29 +1,49 @@
 import { About } from "./components/About"
 import { Contact } from "./components/Contact"
+import { Faq } from "./components/Faq"
 import { Footer } from "./components/Footer"
+import { GeoField } from "./components/GeoField"
 import { Header } from "./components/Header"
 import { Hero } from "./components/Hero"
+import { Hire } from "./components/Hire"
+import { ScrollProgress } from "./components/ScrollProgress"
+import { Skills } from "./components/Skills"
+import { SocialRail } from "./components/SocialRail"
+import { Timeline } from "./components/Timeline"
 import { Work } from "./components/Work"
 
 export default function App() {
   return (
     <div id="top">
-      <a
-        href="#work"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-accent focus:px-3 focus:py-2 focus:text-ink"
-      >
-        Skip to work
-      </a>
-      <div className="flex min-h-[100dvh] flex-col">
-        <Header />
-        <Hero />
+      <div className="site-field">
+        <GeoField kind="dots" fog="#02060d" />
       </div>
-      <main>
-        <Work />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
+      <div className="relative z-10">
+        <ScrollProgress />
+        <a
+          href="#work"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-6 focus:left-4 focus:z-50 focus:bg-accent focus:px-3 focus:py-2 focus:text-ink"
+        >
+          Skip to work
+        </a>
+        <Header />
+        <div className="relative flex min-h-[calc(100dvh-4rem)] flex-col">
+          <Hero />
+        </div>
+        <main>
+          <div className="field-slab">
+            <Work />
+            <Skills />
+          </div>
+          <Timeline />
+          <About />
+          <Faq />
+          <Hire />
+          <Contact />
+        </main>
+        <SocialRail />
+        <Footer />
+      </div>
     </div>
   )
 }

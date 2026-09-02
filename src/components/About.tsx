@@ -3,12 +3,11 @@ import { Reveal } from "./Reveal"
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-16 border-t border-line">
+    <section id="about" className="no-grid scroll-mt-20 border-t border-line">
       <div className="mx-auto max-w-[1400px] px-4 py-20 md:px-8 md:py-28">
         <Reveal>
-          <h2 className="font-display text-3xl font-medium tracking-tight text-paper md:text-4xl">
-            About
-          </h2>
+          <p className="kicker">Profile</p>
+          <h2 className="section-title mt-3 text-3xl md:text-5xl">About</h2>
           <div className="mt-8 max-w-[62ch] space-y-5 text-base leading-relaxed text-mute md:text-[17px]">
             <p>
               I am a full-stack engineer in Vancouver. React and React Native
@@ -27,24 +26,23 @@ export function About() {
           </div>
         </Reveal>
 
-        <Reveal className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1.4fr]">
-          <div>
-            <p className="font-display text-4xl font-medium tracking-tight text-paper">
-              2
-            </p>
-            <p className="mt-2 text-[13px] text-mute">Companies co-founded</p>
+        <Reveal className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1.4fr]">
+          <div className="surface px-5 py-6">
+            <p className="kicker">Companies</p>
+            <p className="section-title mt-3 text-4xl">2</p>
+            <p className="mt-2 text-[13px] text-mute">Co-founded</p>
           </div>
-          <div>
-            <p className="font-display text-4xl font-medium tracking-tight text-paper">
-              3
-            </p>
-            <p className="mt-2 text-[13px] text-mute">Production apps shipped</p>
+          <div className="surface px-5 py-6">
+            <p className="kicker">Shipped</p>
+            <p className="section-title mt-3 text-4xl">3</p>
+            <p className="mt-2 text-[13px] text-mute">Production apps</p>
           </div>
-          <div>
-            <p className="font-display text-4xl font-medium tracking-tight text-paper">
+          <div className="surface px-5 py-6">
+            <p className="kicker">Based</p>
+            <p className="mt-3 font-display text-4xl font-medium tracking-tight text-paper">
               {site.location}
             </p>
-            <p className="mt-2 text-[13px] text-mute">Based</p>
+            <p className="mt-2 text-[13px] text-mute">Currently listed</p>
           </div>
         </Reveal>
       </div>

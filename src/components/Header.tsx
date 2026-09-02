@@ -1,32 +1,55 @@
+import { LayoutGroup, motion } from "motion/react"
+import { useActiveSection } from "../hooks/useActiveSection"
+
 const links = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "#work", id: "work", label: "Work" },
+  { href: "#skills", id: "skills", label: "Skills" },
+  { href: "#path", id: "path", label: "Path" },
+  { href: "#about", id: "about", label: "About" },
+  { href: "#contact", id: "contact", label: "Contact" },
 ] as const
 
 export function Header() {
+  const active = useActiveSection()
+
   return (
-    <header className="flex h-16 shrink-0 items-center border-b border-line bg-ink">
-      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-4 md:px-8">
+    <header className="sticky top-1 z-50 flex h-16 shrink-0 items-center border-b border-line/70 bg-ink/55 backdrop-blur-md">
+      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between gap-4 px-4 md:px-8">
         <a
           href="#top"
-          className="font-display text-[15px] font-medium tracking-tight text-paper"
+          className="font-hero shrink-0 text-[13px] font-medium tracking-wide text-paper uppercase"
         >
-          Liam Holloway
+          <span className="sm:hidden">LH</span>
+          <span className="hidden sm:inline">Liam Holloway</span>
         </a>
-        <nav aria-label="Primary">
-          <ul className="flex items-center gap-5 md:gap-8">
-            {links.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-[13px] text-mute transition-colors hover:text-paper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+        <nav aria-label="Primary" className="min-w-0">
+          <LayoutGroup>
+          <ul className="flex items-center justify-end gap-3 overflow-x-auto md:gap-7">
+            {links.map((link) => {
+              const on = active === link.id
+              return (
+                <li key={link.href} className="relative shrink-0">
+                  <a
+                    href={link.href}
+                    className={`text-[13px] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${
+                      on ? "text-paper" : "text-mute hover:text-paper"
+                    }`}
+                    aria-current={on ? "location" : undefined}
+                  >
+                    {link.label}
+                  </a>
+                  {on ? (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-accent shadow-[0_0_8px_var(--color-accent)]"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                    />
+                  ) : null}
+                </li>
+              )
+            })}
           </ul>
+          </LayoutGroup>
         </nav>
       </div>
     </header>
