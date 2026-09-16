@@ -11,7 +11,7 @@ export function ScrollProgress() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-1 bg-line/55"
+      className="pointer-events-none absolute inset-x-0 top-0 z-10 h-0.5"
       role="progressbar"
       aria-hidden
     >

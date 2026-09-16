@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "motion/react"
 import { path } from "../content/sections"
+import { PathWrap } from "./PathWrap"
 import { Reveal } from "./Reveal"
 
 function Corners() {
@@ -18,6 +19,7 @@ export function Timeline() {
 
   return (
     <section id="path" className="relative scroll-mt-20 border-t border-line">
+      <PathWrap />
       <div className="relative mx-auto max-w-[1400px] px-4 py-20 md:px-8 md:py-28">
         <Reveal>
           <p className="kicker">Path</p>
@@ -29,14 +31,6 @@ export function Timeline() {
 
         <div className="relative mt-14">
           <div className="absolute top-0 bottom-0 left-[15px] w-px -translate-x-1/2 bg-line md:left-1/2" />
-          <motion.div
-            className="absolute top-0 left-[15px] w-px origin-top -translate-x-1/2 bg-linear-to-b from-accent via-pop to-accent md:left-1/2"
-            initial={reduce ? { scaleY: 1 } : { scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-            style={{ height: "100%" }}
-          />
 
           <ol>
             {path.map((item, i) => {
@@ -44,20 +38,26 @@ export function Timeline() {
               return (
                 <li
                   key={item.title}
+                  data-path-beat={i}
                   className="relative grid grid-cols-[32px_1fr] items-start gap-4 py-6 md:grid-cols-[1fr_32px_1fr] md:gap-8 md:py-10"
                 >
-                  <div className="relative z-10 flex h-8 w-8 items-center justify-center md:col-start-2 md:row-start-1">
-                    <motion.span
-                      className="h-3.5 w-3.5 rounded-full bg-pop shadow-[0_0_14px_var(--color-pop)]"
-                      initial={reduce ? false : { scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true, margin: "-8%" }}
-                      transition={{ type: "spring", stiffness: 260, damping: 16 }}
+                  <motion.div
+                    data-path-node
+                    className="relative z-10 flex h-8 w-8 origin-center items-center justify-center self-center overflow-visible md:col-start-2 md:row-start-1"
+                    initial={reduce ? false : { scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true, margin: "-8%" }}
+                    transition={{ type: "spring", stiffness: 260, damping: 16 }}
+                  >
+                    <span
+                      data-path-orb
+                      className="block h-3.5 w-3.5 origin-center rounded-full bg-pop shadow-[0_0_14px_var(--color-pop)]"
                     />
-                  </div>
+                  </motion.div>
 
                   <motion.article
-                    className={`surface relative px-6 py-6 md:row-start-1 ${
+                    data-path-card
+                    className={`path-card relative px-6 py-6 md:row-start-1 ${
                       left ? "md:col-start-1" : "md:col-start-3"
                     }`}
                     initial={
@@ -94,7 +94,7 @@ export function Timeline() {
                   </motion.article>
 
                   <motion.p
-                    className={`hidden rounded-full border border-line bg-ink px-3 py-1.5 text-[11px] tracking-wide text-mute uppercase md:row-start-1 md:inline-flex md:items-center ${
+                    className={`hidden rounded-full border border-line bg-ink px-3 py-1.5 text-[11px] tracking-wide text-mute uppercase self-start md:row-start-1 md:inline-flex md:items-center ${
                       left
                         ? "md:col-start-3 md:justify-self-start"
                         : "md:col-start-1 md:justify-self-end"
